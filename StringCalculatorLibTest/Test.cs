@@ -4,6 +4,40 @@ namespace UnitTesting1.Tests
     //TestSuite
     public class StringCalculatorAddOPerationTestSuite
     {
+
+
+        /*[Theory]
+        [InlineData("", 0)]
+        [InlineData("1,2", 3)]
+        public void GivenInputStringOutputIntegerExpected(string input, int expectedResult)
+
+        {
+
+            int actualResult = StringCalculator.Add(input);
+
+            Assert.Equal(expectedResult, actualResult);
+
+        }
+        [Theory]
+        [InlineData("1,2", 3)]
+        [InlineData("1\n2,3", 6)]
+        [InlineData("2,1001", 2)]
+        [InlineData("//;\n1;2", 3)]
+        [InlineData("//[*]\n1**2**3", 6)]
+        [InlineData("//[*][%]\n1*2%3", 6)]
+        public void GivenNumbersSeparatedByDelimiter_WhenAddIsCalled_ThenResultShouldBeSumOfNumbers(string input, int expectedResult)
+        {
+            int actualResult = StringCalculator.Add(input);
+
+            Assert.Equal(expectedResult, actualResult);
+        }*/
+        [Theory]
+        [ClassData(typeof(StringCalcTestInputData))]
+        public void GivenInputStringOutputIntegerExpected(string input, int expectedResult)
+        {
+            int actualResult = StringCalculator.Add(input);
+            Assert.Equal(expectedResult, actualResult);
+        }
         [Fact] //TestCase
         public void GivenEmptyStringInputZeroIsExpected()
         {
